@@ -33,9 +33,7 @@ function Product() {
 
             {/* Hover Overlay */}
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <button className="bg-yellow-400 text-white font-semibold px-4 py-2 rounded hover:bg-yellow-500 transition">
-                Add to Cart
-              </button>
+              <button className="bg-yellow-500 text-white px-4 py-2 rounded" onClick={() => alert('Added to cart!')}>Add to cart</button>
             </div>
 
             {/* Discount Badge */}

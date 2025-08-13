@@ -1,14 +1,14 @@
 import React from "react";
 
 const Productcard = ({ product }) => {
-  const add =(cartItems,setCartItems)=>{
-  setCartItems = ([product])}
+  const add = (cartItems, setCartItems) => {
+    setCartItems = ([product])
+  }
   return (
     <div className="relative group bg-white shadow-lg rounded-lg overflow-hidden">
       {/* Product Image */}
       <div className="relative">
-        <img src={product.image} alt={product.name} className="w-full h-64 object-cover" />
-        {product.discount && (
+        <img src={process.env.PUBLIC_URL + "/images/" + product.image} alt={product.name} className="w-full h-64 object-cover" />        {product.discount && (
           <div className="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
             {product.discount}
           </div>

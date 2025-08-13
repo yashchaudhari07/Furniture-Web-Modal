@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -11,10 +12,10 @@ const Navbar = () => {
 
       {/* Center Links */}
       <div className="hidden md:flex space-x-8 text-gray-700">
-        <a href="/" className="hover:text-black transition">Home</a>
-        <a href="/shop" className="hover:text-black transition">Shop</a>
-        <a href="Cart" className="hover:text-black transition">About</a>
-        <a href="Contact" className="hover:text-black transition">Contact</a>
+<Link to="/" className="hover:text-black transition">Home</Link>
+<Link to="/shop" className="hover:text-black transition">Shop</Link>
+<Link to="/Cart" className="hover:text-black transition">Cart</Link>
+<Link to="/Contact" className="hover:text-black transition">Contact</Link>
       </div>
 
       {/* Right Icons */}
