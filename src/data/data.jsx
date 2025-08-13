@@ -1,37 +1,61 @@
-const products = [
+export const products = [
     {
       id: 1,
-      name: 'Asgaard sofa',
-      price: 250000,
-      description:
-        'Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with well-balanced audio.',
+      name: "Syltherine",
+      price: 2500000,
+      oldPrice: 3500000,
+      discount: "-30%",
+      tag: null,
+      image: "syltherine.jpg",
       images: [
-        'https://via.placeholder.com/500x400',
-        'https://via.placeholder.com/60x60',
-        'https://via.placeholder.com/60x60',
+        "https://via.placeholder.com/500x400",
+        "https://via.placeholder.com/60x60",
+        "https://via.placeholder.com/60x60"
       ],
-      size: ['L', 'XL', 'XS'],
-      colors: ['#7B61FF', '#FFC700', '#000000'],
-      sku: 'SS001',
-      category: 'Sofas',
-      tags: ['Sofa', 'Chair', 'Home', 'Shop'],
+      size: ["L", "XL", "XS"],
+      colors: ["#7B61FF", "#FFC700", "#000000"],
+      sku: "SS001",
+      category: "Sofas",
+      tags: ["Sofa", "Chair", "Home", "Shop"]
     },
     {
       id: 2,
-      name: 'Lounge Chair',
-      price: 150000,
-      description: 'This stylish lounge chair adds a modern touch to your living space.',
+      name: "Sofa",
+      price: 1500000,
+      oldPrice: 2000000,
+      discount: "-25%",
+      tag: "New",
+      image: "sofa.jpg",
       images: [
-        'https://via.placeholder.com/500x400',
-        'https://via.placeholder.com/60x60',
+        "https://via.placeholder.com/500x400",
+        "https://via.placeholder.com/60x60",
+        "https://via.placeholder.com/60x60"
       ],
-      size: ['M', 'L'],
-      colors: ['#D4AF37', '#000000'],
-      sku: 'LC002',
-      category: 'Chairs',
-      tags: ['Chair', 'Lounge', 'Furniture'],
+      size: ["M", "L", "XL"],
+      colors: ["#FF5733", "#33FF57", "#3357FF"],
+      sku: "SS002",
+      category: "Sofas",
+      tags: ["Sofa", "Living Room", "Furniture"]
     },
-  ];
-  
-  export default products;
-  
+    {
+      id: 3,
+      name: "Chair",
+      price: 800000,
+      oldPrice: 1000000,
+      discount: "-20%",
+      tag: null,
+      image: "chair.jpg",
+      images: [
+        "https://via.placeholder.com/500x400",
+        "https://via.placeholder.com/60x60",
+        "https://via.placeholder.com/60x60"
+      ],
+      size: ["S", "M"],
+      colors: ["#FF5733", "#C70039"],
+      sku: "SS003",
+      category: "Chairs",
+      tags: ["Chair", "Office", "Home"]
+    }
+
+    
+];
