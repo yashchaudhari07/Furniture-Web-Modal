@@ -1,15 +1,15 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import products from '../data/data';
+import { products } from '../Data';
 
 const ItemPage = () => {
   const { id } = useParams(); // Get product ID from the URL
   const product = products.find((item) => item.id === parseInt(id));
   const navigate = useNavigate();
 
-  // if (!product) {
-  //   return <h1 className="text-center mt-8 text-red-500">Product not found</h1>;
-  // }
+  if (!product) {
+    return <h1 className="text-center mt-8 text-red-500">Product not found</h1>;
+  }
 
   const handleOrderClick = () => {
     navigate(`/order/${id}`);

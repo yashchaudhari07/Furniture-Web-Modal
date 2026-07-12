@@ -10,72 +10,62 @@ function Product() {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen">
-      {/* Title */}
-      <h1 className="text-4xl font-bold text-center my-8 text-gray-800">
-        Our Products
-      </h1>
+    <div className="bg-gray-100 py-16">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-900">Featured Collection</h1>
+          <p className="mt-4 text-gray-600">Modern furniture designed for comfort and elegance, chosen from our best sellers.</p>
+        </div>
 
-      {/* Product Grid */}
-      <div className="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className="relative group bg-white border rounded-lg shadow-md overflow-hidden cursor-pointer"
-            onClick={() => handleProductClick(product.id)}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.slice(0, 6).map((product) => (
+            <div
+              key={product.id}
+              className="group relative overflow-hidden rounded-3xl bg-white shadow-lg cursor-pointer"
+              onClick={() => handleProductClick(product.id)}
+            >
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-xl font-semibold text-gray-900">{product.name}</h3>
+                  {product.discount && (
+                    <span className="rounded-full bg-red-500 px-3 py-1 text-xs font-semibold text-white">
+                      {product.discount}
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm text-gray-500 mb-4">{product.description}</p>
+                <div className="flex items-center justify-between gap-4">
+                  <span className="text-lg font-bold text-gray-900">Rp {product.price.toLocaleString()}</span>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      e.preventDefault();
+                      alert(`${product.name} added to cart!`);
+                    }}
+                    className="rounded-full bg-yellow-500 px-5 py-2 text-sm font-semibold text-white hover:bg-yellow-600 transition"
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex justify-center mt-12">
+          <button
+            onClick={() => navigate('/shop')}
+            className="rounded-full bg-gray-900 px-8 py-3 text-white font-semibold hover:bg-black transition"
           >
-            {/* Product Image */}
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-
-            {/* Hover Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <button className="bg-yellow-500 text-white px-4 py-2 rounded" onClick={() => alert('Added to cart!')}>Add to cart</button>
-            </div>
-
-            {/* Discount Badge */}
-            {product.discount && (
-              <div className="absolute top-2 right-2 bg-red-500 text-white text-sm px-2 py-1 rounded-full">
-                {product.discount}
-              </div>
-            )}
-
-            {/* New Badge */}
-            {product.isNew && (
-              <div className="absolute top-2 right-2 bg-teal-500 text-white text-sm px-2 py-1 rounded-full">
-                New
-              </div>
-            )}
-
-            {/* Product Info */}
-            <div className="p-4 bg-white">
-              <h3 className="text-lg font-semibold text-gray-800">
-                {product.name}
-              </h3>
-              <p className="text-sm text-gray-500">{product.description}</p>
-              <div className="mt-2">
-                <span className="text-lg font-bold text-gray-800">
-                  {product.price}
-                </span>
-                {product.oldPrice && (
-                  <span className="ml-2 text-sm line-through text-gray-400">
-                    {product.oldPrice}
-                  </span>
-                )}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Show More Button */}
-      <div className="flex justify-center my-8">
-        <button className="bg-yellow-400 text-white font-semibold px-6 py-2 rounded hover:bg-yellow-500 transition">
-          Show More
-        </button>
+            View full collection
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { Checkoutpage } from "./Checkoutpage";
-import { Route } from "react-router-dom";
 import Navbar from "../Components/Navbar/Navbar";
 
 const Cart = () => {

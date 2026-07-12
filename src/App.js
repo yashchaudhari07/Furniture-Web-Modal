@@ -1,5 +1,4 @@
 
-'use client';
 import React from 'react';
 import { Home } from './Pages/Home';
 import './index.css';
@@ -20,11 +19,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
-          <Route path="Register" element={<Register />} />
-          <Route path="Contact" element={<Contactpage />} />
-          <Route path="Cart" element={<Cart />} />
-          <Route path="Checkout" element={<Checkoutpage />} />
-          <Route path="product/:id" element={<ProductPage />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/contact" element={<Contactpage />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkoutpage />} />
+          <Route path="/product/:id" element={<ProductPage />} />
           {/* <Route path="singleproduct" element={<ItemPage/>} /> */}
           <Route path="*" element={<ErrorPage />} />
 

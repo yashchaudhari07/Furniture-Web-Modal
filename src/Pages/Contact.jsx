@@ -5,13 +5,13 @@ import ContactPage from '../Components/Contactpage/Contactpage'
 import Footer from '../Components/Footer/Footer'
 
 
-export const Contactpage= () => {
+export const Contactpage = () => {
   return (
     <div>
-        <Navbar/>
-        <PageHeader Pagename="Contact Page"/>
-        < ContactPage/>
-        <Footer/>
+      <Navbar />
+      <PageHeader Pagename="Contact Page" />
+      <ContactPage />
+      <Footer />
     </div>
-  )
+  );
 }

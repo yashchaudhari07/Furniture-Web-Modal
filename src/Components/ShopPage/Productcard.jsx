@@ -1,43 +1,49 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Productcard = ({ product }) => {
-  const add = (cartItems, setCartItems) => {
-    setCartItems = ([product])
-  }
+const Productcard = ({ product, onAddToCart }) => {
+  const imageUrl = product.image || "https://via.placeholder.com/500x400";
+
   return (
-    <div className="relative group bg-white shadow-lg rounded-lg overflow-hidden">
-      {/* Product Image */}
-      <div className="relative">
-        <img src={process.env.PUBLIC_URL + "/images/" + product.image} alt={product.name} className="w-full h-64 object-cover" />        {product.discount && (
-          <div className="absolute top-4 right-4 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
-            {product.discount}
-          </div>
-        )}
-        {product.tag && (
-          <div className="absolute top-4 left-4 bg-teal-500 text-white text-xs px-2 py-1 rounded-full">
-            {product.tag}
-          </div>
-        )}
-        {/* Hover Effects */}
-        <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex justify-center items-center space-x-4 transition-all">
-          <button className="bg-yellow-500 text-white px-4 py-2 rounded" onClick={add}>Add to cart</button>
-          <button className="text-white">Share</button>
-          <button className="text-white">Compare</button>
-          <button className="text-white">Like</button>
-        </div>
-      </div>
-
-      {/* Product Info */}
-      <div className="p-4 text-center">
-        <h3 className="text-lg font-semibold">{product.name}</h3>
-        <p className="text-gray-500 text-sm mb-1">Stylish cafe chair</p>
-        <div className="text-gray-800 font-bold">
-          Rp {product.price.toLocaleString()}
-          {product.oldPrice && (
-            <span className="text-gray-400 line-through text-sm ml-2">
-              Rp {product.oldPrice.toLocaleString()}
-            </span>
+    <div className="group bg-white shadow-lg rounded-3xl overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+      <Link to={`/product/${product.id}`} className="block overflow-hidden">
+        <div className="relative">
+          <img src={imageUrl} alt={product.name} className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
+          {product.discount && (
+            <div className="absolute top-4 right-4 bg-red-500 text-white text-xs px-3 py-1 rounded-full">
+              {product.discount}
+            </div>
           )}
+          {product.tag && (
+            <div className="absolute top-4 left-4 bg-amber-500 text-white text-xs px-3 py-1 rounded-full">
+              {product.tag}
+            </div>
+          )}
+        </div>
+      </Link>
+
+      <div className="p-5">
+        <h3 className="text-lg font-semibold text-gray-900 mb-2">{product.name}</h3>
+        <p className="text-sm text-gray-500 mb-4">{product.description}</p>
+
+        <div className="flex items-center justify-between gap-3">
+          <div className="text-left">
+            <span className="text-xl font-bold text-gray-900">Rp {product.price.toLocaleString()}</span>
+            {product.oldPrice && (
+              <span className="ml-2 text-sm line-through text-gray-400">Rp {product.oldPrice.toLocaleString()}</span>
+            )}
+          </div>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              onAddToCart?.();
+            }}
+            className="rounded-full bg-yellow-500 px-5 py-2 text-sm font-semibold text-white hover:bg-yellow-600 transition"
+          >
+            Add
+          </button>
         </div>
       </div>
     </div>

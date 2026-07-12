@@ -11,24 +11,29 @@ const ProductPage = () => {
     return <h1 className="text-center mt-8 text-red-500">Product not found</h1>;
   }
 
+  const thumbnails = product.images || [];
+  const primaryImage = thumbnails[0] || product.image || "https://via.placeholder.com/800x600";
+  const sizes = product.size || ["One Size"];
+  const colors = product.colors || ["#000000"];
+
   return (
     <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
       {/* Product Images */}
-      <div className="flex">
+      <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-4">
-          {product.images.map((img, index) => (
+          {thumbnails.map((img, index) => (
             <img
               key={index}
               src={img}
               alt={`Thumbnail ${index + 1}`}
-              className="w-16 h-16 rounded-lg cursor-pointer"
+              className="w-16 h-16 rounded-lg cursor-pointer object-cover"
             />
           ))}
         </div>
         <img
-          src={product.images[0]}
+          src={primaryImage}
           alt={product.name}
-          className="ml-4 rounded-lg w-full"
+          className="rounded-lg w-full object-cover"
         />
       </div>
 

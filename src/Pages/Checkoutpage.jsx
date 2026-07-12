@@ -8,10 +8,10 @@ import Footer from '../Components/Footer/Footer'
 export const Checkoutpage = () => {
   return (
     <div>
-        <Navbar/>
-        <PageHeader Pagename="Checkout Page"/>
-        < Register/>
-        <Footer/>
+      <Navbar />
+      <PageHeader Pagename="Checkout Page" />
+      <Register />
+      <Footer />
     </div>
-  )
+  );
 }
