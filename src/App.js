@@ -2,7 +2,7 @@
 import React from 'react';
 import { Home } from './Pages/Home';
 import './index.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { Shop } from './Pages/Shop';
 import Register from './Components/Register/Register';
 import { Contactpage } from './Pages/Contact';
