@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Furniture-Web-Modal/static/css/main.ca5e4817.css",
+    "main.js": "/Furniture-Web-Modal/static/js/main.3f7c0c12.js",
+    "static/js/453.64512fd7.chunk.js": "/Furniture-Web-Modal/static/js/453.64512fd7.chunk.js",
+    "index.html": "/Furniture-Web-Modal/index.html",
+    "main.ca5e4817.css.map": "/Furniture-Web-Modal/static/css/main.ca5e4817.css.map",
+    "main.3f7c0c12.js.map": "/Furniture-Web-Modal/static/js/main.3f7c0c12.js.map",
+    "453.64512fd7.chunk.js.map": "/Furniture-Web-Modal/static/js/453.64512fd7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ca5e4817.css",
+    "static/js/main.3f7c0c12.js"
+  ]
+}
